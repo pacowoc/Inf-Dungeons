@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iostream>
 #include "Block.h"
 
 
@@ -42,10 +43,16 @@ void Block::changeTextureB(const unsigned char NewID){
     TextureIDB = NewID;
 }
 
-
-void Block::refresh_texture(const std::vector<sf::Texture>& IDTable){
-    setTexture(IDTable.at(CurrentTextureID));
+void Block::changeTag(const unsigned char NTag){
+    Tag = NTag;
 }
 
+void Block::refresh_texture(const std::vector<sf::Texture>& IDTable,const sf::Texture& OOB){
+    if(CurrentType==0x00){
+        setTexture(OOB);
+    }else{
+        setTexture(IDTable.at(CurrentTextureID));
+    }
+}
 
 

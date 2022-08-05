@@ -41,14 +41,23 @@
                 return CurrentType;
             }
 
+            unsigned short get_textureIDA()const{
+                return TextureIDA;
+            }
+            
+            unsigned short get_textureIDB()const{
+                return TextureIDB;
+            }
+
             //definition in Block.cpp
             void switch_to_A();
             void switch_to_B();  
+            void changeTag(const unsigned char Ntag);
             void changeTypeA(const unsigned char NType);
             void changeTypeB(const unsigned char NType);
             void changeTextureA(const unsigned char NTexID);
             void changeTextureB(const unsigned char NTexID);
-            void refresh_texture(const std::vector<sf::Texture>& IDTable);
+            void refresh_texture(const std::vector<sf::Texture>& IDTable,const sf::Texture& OOB);
               
 
             
